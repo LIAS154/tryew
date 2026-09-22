@@ -1,0 +1,480 @@
+* {
+
+  box-sizing: border-box;
+
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+
+}
+
+html,
+body {
+
+  width: 100%;
+  height: 100%;
+
+  margin: 0;
+
+  overflow: hidden;
+
+  touch-action: none;
+
+  font-family: sans-serif;
+
+}
+
+body {
+
+  background: black;
+
+}
+
+#game {
+
+  position: fixed;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+}
+
+#game canvas {
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+}
+
+
+/* =========================
+   SCORE
+========================= */
+
+#score {
+
+  position: fixed;
+
+  top: 20px;
+  left: 20px;
+
+  padding: 10px 16px;
+
+  color: white;
+
+  background:
+    rgba(0, 0, 0, 0.6);
+
+  border-radius: 10px;
+
+  font-size: 20px;
+
+  font-weight: bold;
+
+  z-index: 30;
+
+}
+
+
+/* =========================
+   CHARGE UI
+========================= */
+
+#chargeUI {
+
+  position: fixed;
+
+  top: 20px;
+  right: 20px;
+
+  width: 245px;
+
+  padding: 10px 12px;
+
+  color: white;
+
+  background:
+    rgba(0, 0, 0, 0.65);
+
+  border-radius: 10px;
+
+  z-index: 30;
+
+  pointer-events: none;
+
+  display: none;
+
+}
+
+#chargeText {
+
+  text-align: center;
+
+  font-size: 14px;
+
+  font-weight: bold;
+
+  margin-bottom: 6px;
+
+}
+
+#chargeBar {
+
+  width: 100%;
+  height: 12px;
+
+  background:
+    rgba(255, 255, 255, 0.25);
+
+  border-radius: 10px;
+
+  overflow: hidden;
+
+}
+
+#chargeFill {
+
+  width: 0%;
+
+  height: 100%;
+
+  background:
+    #ff4444;
+
+  border-radius: 10px;
+
+  transition:
+    width 0.03s linear;
+
+}
+
+
+/* =========================
+   CROSSHAIR
+========================= */
+
+#crosshair {
+
+  position: fixed;
+
+  left: 50%;
+  top: 50%;
+
+  transform:
+    translate(-50%, -50%);
+
+  color: white;
+
+  font-size: 25px;
+
+  font-weight: bold;
+
+  text-shadow:
+    0 0 3px black,
+    0 0 7px black;
+
+  pointer-events: none;
+
+  z-index: 20;
+
+}
+
+
+/* =========================
+   BOW
+========================= */
+
+#bow {
+
+  position: fixed;
+
+  right: 60px;
+  bottom: 35px;
+
+  width: 170px;
+  height: 270px;
+
+  pointer-events: none;
+
+  z-index: 25;
+
+}
+
+#bowUpper {
+
+  position: absolute;
+
+  right: 40px;
+  top: 5px;
+
+  width: 25px;
+  height: 125px;
+
+  border-right:
+    7px solid #6b3e20;
+
+  border-radius: 50%;
+
+  transform:
+    rotate(-15deg);
+
+}
+
+#bowLower {
+
+  position: absolute;
+
+  right: 40px;
+  bottom: 5px;
+
+  width: 25px;
+  height: 125px;
+
+  border-right:
+    7px solid #6b3e20;
+
+  border-radius: 50%;
+
+  transform:
+    rotate(15deg);
+
+}
+
+#bowGrip {
+
+  position: absolute;
+
+  right: 44px;
+  top: 112px;
+
+  width: 18px;
+  height: 55px;
+
+  background:
+    #3d2415;
+
+  border-radius: 5px;
+
+}
+
+#bowString {
+
+  position: absolute;
+
+  right: 30px;
+  top: 10px;
+
+  width: 2px;
+  height: 250px;
+
+  background:
+    rgba(255, 255, 255, 0.8);
+
+}
+
+
+/* =========================
+   JOYSTICK
+========================= */
+
+#joystick {
+
+  position: fixed;
+
+  left: 30px;
+  bottom: 30px;
+
+  width: 130px;
+  height: 130px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.18);
+
+  border:
+    2px solid
+    rgba(255, 255, 255, 0.35);
+
+  z-index: 40;
+
+  touch-action: none;
+
+}
+
+#joystickKnob {
+
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 60px;
+  height: 60px;
+
+  margin-left: -30px;
+  margin-top: -30px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.65);
+
+  border:
+    2px solid
+    rgba(255, 255, 255, 0.9);
+
+  pointer-events: none;
+
+}
+
+
+/* =========================
+   SHOOT BUTTON
+========================= */
+
+#shootButton {
+
+  position: fixed;
+
+  right: 140px;
+  bottom: 35px;
+
+  width: 90px;
+  height: 90px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background:
+    rgba(220, 60, 60, 0.9);
+
+  color: white;
+
+  font-size: 14px;
+
+  font-weight: bold;
+
+  z-index: 40;
+
+  touch-action: none;
+
+  box-shadow:
+    0 4px 10px
+    rgba(0, 0, 0, 0.25);
+
+}
+
+#shootButton:active {
+
+  transform:
+    scale(0.9);
+
+}
+
+
+/* =========================
+   JUMP BUTTON
+========================= */
+
+#jumpButton {
+
+  position: fixed;
+
+  right: 35px;
+  bottom: 35px;
+
+  width: 90px;
+  height: 90px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.8);
+
+  color: #222;
+
+  font-size: 15px;
+
+  font-weight: bold;
+
+  z-index: 40;
+
+  touch-action: none;
+
+}
+
+#jumpButton:active {
+
+  transform:
+    scale(0.9);
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  #score {
+
+    top: 10px;
+    left: 10px;
+
+    font-size: 16px;
+
+  }
+
+  #chargeUI {
+
+    top: 10px;
+    right: 10px;
+
+    width: 200px;
+
+  }
+
+  #bow {
+
+    right: 10px;
+    bottom: 5px;
+
+    transform:
+      scale(0.8);
+
+    transform-origin:
+      bottom right;
+
+  }
+
+  #joystick {
+
+    left: 20px;
+    bottom: 20px;
+
+  }
+
+  #shootButton {
+
+    right: 120px;
+    bottom: 20px;
+
+  }
+
+  #jumpButton {
+
+    right: 20px;
+    bottom: 20px;
+
+  }
+
+}

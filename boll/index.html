@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=no"
+  >
+
+  <title>Archery Gym</title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js"
+    }
+  }
+  </script>
+
+</head>
+
+<body>
+
+  <div id="game"></div>
+
+  <div id="score">
+    SCORE: 0
+  </div>
+
+  <!-- パワーゲージ -->
+
+  <div id="chargeUI">
+
+    <div id="chargeText">
+      POWER 0%
+    </div>
+
+    <div id="chargeBar">
+
+      <div id="chargeFill"></div>
+
+    </div>
+
+  </div>
+
+  <!-- クロスヘア -->
+
+  <div id="crosshair">
+    +
+  </div>
+
+  <!-- 弓 -->
+
+  <div id="bow">
+
+    <div id="bowUpper"></div>
+
+    <div id="bowLower"></div>
+
+    <div id="bowGrip"></div>
+
+    <div id="bowString"></div>
+
+  </div>
+
+  <!-- 移動スティック -->
+
+  <div id="joystick">
+
+    <div id="joystickKnob"></div>
+
+  </div>
+
+  <!-- 射撃 -->
+
+  <button id="shootButton">
+    SHOOT
+  </button>
+
+  <!-- ジャンプ -->
+
+  <button id="jumpButton">
+    JUMP
+  </button>
+
+  <script
+    type="module"
+    src="script.js"
+  ></script>
+
+</body>
+
+</html>
